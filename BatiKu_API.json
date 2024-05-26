@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "d4b5e2b4-37b3-4b3f-8a89-f6b3be3049f4",
+		"name": "BatiKu API",
+		"description": "API Documentation for the BatiKu project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_API_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"johndoe\",\n  \"email\": \"johndoe@example.com\",\n  \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "https://api.yourprojectdomain.com/users",
+							"protocol": "https",
+							"host": ["api", "yourprojectdomain", "com"],
+							"path": ["users"]
+						},
+						"description": "Creates a new user in the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_API_KEY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.yourprojectdomain.com/users/:userId",
+							"protocol": "https",
+							"host": ["api", "yourprojectdomain", "com"],
+							"path": ["users", ":userId"],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						},
+						"description": "Retrieves details of a specific user."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Batik Motif Management",
+			"item": [
+				{
+					"name": "Add Batik Motif",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_API_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Parang\",\n  \"description\": \"A traditional batik motif symbolizing strength\",\n  \"imageUrl\": \"https://example.com/images/parang.jpg\"\n}"
+						},
+						"url": {
+							"raw": "https://api.yourprojectdomain.com/motifs",
+							"protocol": "https",
+							"host": ["api", "yourprojectdomain", "com"],
+							"path": ["motifs"]
+						},
+						"description": "Adds a new batik motif to the database."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Batik Motif Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_API_KEY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.yourprojectdomain.com/motifs/:motifId",
+							"protocol": "https",
+							"host": ["api", "yourprojectdomain", "com"],
+							"path": ["motifs", ":motifId"],
+							"variable": [
+								{
+									"key": "motifId",
+									"value": ""
+								}
+							]
+						},
+						"description": "Retrieves details of a specific batik motif."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Batik Motif",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_API_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Parang Updated\",\n  \"description\": \"Updated description of the batik motif\",\n  \"imageUrl\": \"https://example.com/images/parang_updated.jpg\"\n}"
+						},
+						"url": {
+							"raw": "https://api.yourprojectdomain.com/motifs/:motifId",
+							"protocol": "https",
+							"host": ["api", "yourprojectdomain", "com"],
+							"path": ["motifs", ":motifId"],
+							"variable": [
+								{
+									"key": "motifId",
+									"value": ""
+								}
+							]
+						},
+						"description": "Updates details of an existing batik motif."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Batik Motif",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_API_KEY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.yourprojectdomain.com/motifs/:motifId",
+							"protocol": "https",
+							"host": ["api", "yourprojectdomain", "com"],
+							"path": ["motifs", ":motifId"],
+							"variable": [
+								{
+									"key": "motifId",
+									"value": ""
+								}
+							]
+						},
+						"description": "Deletes a batik motif from the database."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image Upload",
+			"item": [
+				{
+					"name": "Upload Batik Image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_API_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.yourprojectdomain.com/upload",
+							"protocol": "https",
+							"host": ["api", "yourprojectdomain", "com"],
+							"path": ["upload"]
+						},
+						"description": "Uploads an image of a batik motif for analysis."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Batik Motif Identification",
+			"item": [
+				{
+					"name": "Identify Batik Motif",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_API_KEY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"imageUrl\": \"https://example.com/uploads/image123.jpg\"\n}"
+						},
+						"url": {
+							"raw": "https://api.yourprojectdomain.com/identify",
+							"protocol": "https",
+							"host": ["api", "yourprojectdomain", "com"],
+							"path": ["identify"]
+						},
+						"description": "Identifies the batik motif in an uploaded image."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
